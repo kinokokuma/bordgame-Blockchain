@@ -48,13 +48,16 @@ class Block {
     this.data='Data';
     this.hash='Hash';
     this.input=createInput('','number');
-   
+    this.input.position(-5555,-5555);
   }
 
   inputdata()
   {
     
     this.input.size(200,100);
+    
+    this.input.style('font-size', '28px');
+    this.input.style('text-align', 'center');
     this.input.position(this.inputX-100,this.inputY-50);
     this.data=this.input.value();
     if(this.index<2)
@@ -84,7 +87,7 @@ fill(0,0,0);
   }
   calculate(data,oldhash)
   {
-    if(this.input.value()!=''&&inputbox[this.index-1]!='')
+    if(this.input.value()!=''&&inputbox[this.index-1].hash!='')
     {
       let hash=0;
       hash=parseInt(data)+oldhash;
