@@ -47,7 +47,7 @@ class Block {
     this.nonce='Nonce';
     this.data='Data';
     this.hash='Hash';
-    this.input=createInput('',int);
+    this.input=createInput('','number');
    
   }
 
