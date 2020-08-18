@@ -2,7 +2,9 @@
 let inputbox=[]; 
 
 function setup() {
+
   createCanvas(800, 1500);
+  frameRate(10);
   rectMode(CENTER);
   for(let i=0;i<13;i++)
   {
@@ -19,14 +21,15 @@ function draw() {
   for (let i = 1; i < inputbox.length; i++) {
     
   
-    if(mouseX>inputbox[i].x-100&&mouseX<inputbox[i].x+100&&mouseY>inputbox[i].y-50&&mouseY<inputbox[i].y+50)
+    if(mouseX>inputbox[i].x-100&&mouseX<inputbox[i].x+100&&mouseY>inputbox[i].y-50&&mouseY<inputbox[i].y+50&&mouseIsPressed)
     {
       inputbox[i].color= color(0, 255, 0);
       inputbox[i].inputX=inputbox[i].x;
       inputbox[i].inputY=inputbox[i].y;
+
       
     }
-    else{
+    else if(mouseIsPressed){
       inputbox[i].color= color(255, 255, 255);
       inputbox[i].inputX=-5000;
       inputbox[i].inputY=-5000;
@@ -102,6 +105,8 @@ fill(0,0,0);
     {
       this.hash='';
       this.nonce='';
+      this.data='';
+      this.input.value('');
     }
   }
 }
