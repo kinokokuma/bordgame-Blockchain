@@ -4,7 +4,7 @@ let inputbox=[];
 function setup() {
 
   createCanvas(800, 1500);
-  frameRate(10);
+  frameRate(5);
   rectMode(CENTER);
   for(let i=0;i<13;i++)
   {
@@ -52,6 +52,7 @@ class Block {
     this.hash='Hash';
     this.input=createInput('','number');
     this.input.position(-5555,-5555);
+    this.active=false;
   }
 
   inputdata()
@@ -90,6 +91,8 @@ fill(0,0,0);
   }
   calculate(data,oldhash)
   {
+    if(!this.active)
+    {
     if(this.input.value()!=''&&inputbox[this.index-1].hash!='')
     {
       let hash=0;
@@ -100,6 +103,7 @@ fill(0,0,0);
         this.nonce=0;
       }
       this.hash=hash+this.nonce;
+      this.active=true;
     }
     else
     {
@@ -108,5 +112,18 @@ fill(0,0,0);
       this.data='';
       this.input.value('');
     }
+  }
+  else
+  {
+    let hash=0;
+    hash=parseInt(data)+oldhash;
+    this.nonce=5-(hash%5);
+    if( this.nonce==5)
+    {
+      this.nonce=0;
+    }
+    this.hash=hash+this.nonce;
+    
+  }
   }
 }
