@@ -4,7 +4,7 @@ let inputbox=[];
 function setup() {
 
   createCanvas(800, 1500);
-  frameRate(5);
+  frameRate(10);
   rectMode(CENTER);
   for(let i=0;i<13;i++)
   {
