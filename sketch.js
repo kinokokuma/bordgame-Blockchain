@@ -39,9 +39,10 @@ function setup() {
   }
 }
 
- 
 }
-
+function draw() {
+  
+}
 function mouseClicked() {
   for(let set=0;set<2;set++)
   {
