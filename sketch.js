@@ -40,10 +40,8 @@ function setup() {
 }
 
 }
-function draw() {
-  
-}
-function mouseClicked() {
+
+function touchStarted() {
   for(let set=0;set<2;set++)
   {
   background(220);
