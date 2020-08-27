@@ -12,17 +12,15 @@ function setup() {
     inputbox.push(b);
     console.log(inputbox[i].y);
   }
- 
-}
-
-function mouseClicked() {
+  for(let set=0;set<2;set++)
+  {
   background(220);
   inputbox[0].show();
  
   for (let i = 1; i < inputbox.length; i++) {
     
   
-    if(mouseX>inputbox[i].x-300&&mouseX<inputbox[i].x+300&&mouseY>inputbox[i].y-50&&mouseY<inputbox[i].y+50&&mouseIsPressed)
+    if(mouseX>inputbox[i].x-300&&mouseX<inputbox[i].x+300&&mouseY>inputbox[i].y-50&&mouseY<inputbox[i].y+50)
     {
       inputbox[i].color= color(0, 255, 0);
       inputbox[i].inputX=inputbox[i].x-50;
@@ -30,14 +28,47 @@ function mouseClicked() {
 
       
     }
-    else if(mouseIsPressed){
+    else {
       inputbox[i].color= color(255, 255, 255);
       inputbox[i].inputX=-5000;
       inputbox[i].inputY=-5000;
     }
-    inputbox[i].show();
     inputbox[i].inputdata();
+    inputbox[i].show();
+    
   }
+}
+
+ 
+}
+
+function mouseClicked() {
+  for(let set=0;set<2;set++)
+  {
+  background(220);
+  inputbox[0].show();
+ 
+  for (let i = 1; i < inputbox.length; i++) {
+    
+  
+    if(mouseX>inputbox[i].x-300&&mouseX<inputbox[i].x+300&&mouseY>inputbox[i].y-50&&mouseY<inputbox[i].y+50)
+    {
+      inputbox[i].color= color(0, 255, 0);
+      inputbox[i].inputX=inputbox[i].x-50;
+      inputbox[i].inputY=inputbox[i].y;
+
+      
+    }
+    else {
+      inputbox[i].color= color(255, 255, 255);
+      inputbox[i].inputX=-5000;
+      inputbox[i].inputY=-5000;
+    }
+    inputbox[i].inputdata();
+    inputbox[i].show();
+    
+  }
+}
 }
 
 class Block {
