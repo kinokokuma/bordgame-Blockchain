@@ -23,7 +23,7 @@ function setup() {
   
     if(mouseX>inputbox[i].x-300&&mouseX<inputbox[i].x+300&&mouseY>inputbox[i].y-50&&mouseY<inputbox[i].y+50)
     {
-      inputbox[i].color= color(0, 255, 0);
+      inputbox[i].color= color(255, 209, 220);
       inputbox[i].inputX=inputbox[i].x-50;
       inputbox[i].inputY=inputbox[i].y;
 
@@ -53,7 +53,7 @@ function touchStarted() {
   
     if(mouseX>inputbox[i].x-300&&mouseX<inputbox[i].x+300&&mouseY>inputbox[i].y-50&&mouseY<inputbox[i].y+50)
     {
-      inputbox[i].color= color(0, 255, 0);
+      inputbox[i].color= color(255, 209, 220);
       inputbox[i].inputX=inputbox[i].x-50;
       inputbox[i].inputY=inputbox[i].y;
 
@@ -83,6 +83,7 @@ class Block {
     this.data='Data';
     this.hash='Hash';
     this.checkhash='';
+    
     this.input=createInput('','number');
     this.input.position(-5555,-5555);
     this.active=false;
@@ -95,6 +96,7 @@ class Block {
     
     this.input.style('font-size', '28px');
     this.input.style('text-align', 'center');
+   
     this.input.position(this.inputX-250,this.inputY-50);
     this.data=this.input.value();
     if(this.index<2)
@@ -113,11 +115,11 @@ class Block {
   }
 
   show() {
-    fill(255,255,255);
+    fill(this.color);
     rect(this.x-200, this.y, 200,100);
    
     rect(this.x+200, this.y, 200,100);
-    fill(this.color);
+   
    
     rect(this.x, this.y, 200,100);
 fill(0,0,0);

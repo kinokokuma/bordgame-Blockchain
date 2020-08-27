@@ -5,3 +5,7 @@ html, body {
 canvas {
   display: block;
 }
+
+input, textarea {
+  background-color: #FFD1DC;
+}
